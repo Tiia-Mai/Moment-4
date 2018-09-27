@@ -1,0 +1,7 @@
+html{background: whitesmoke;}
+*{color: black;}
+#header{font-family: 'Times New Roman', Times, serif;font-size: 2em;margin-bottom: 5em;}
+header{text-align: center;}
+#resultat{font-size: 1em;font-family:Verdana, Geneva, Tahoma, sans-serif;margin-bottom: 2em;}
+#main{text-align: center;}
+#resultattext{font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 0.9em;}
