@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 var fs = require('fs');
 function readContent(callback) {
     fs.readFile('hitch.txt', 'utf8', function (err, data) {

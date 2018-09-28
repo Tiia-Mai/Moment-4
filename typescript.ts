@@ -1,4 +1,3 @@
-import { readFile } from 'fs';
 
 declare function require(name:string); // Make it possible to use require in TypeScript
 
