@@ -1,12 +1,19 @@
 var fs = require('fs');
-function readContent(callback) {
-    fs.readFile('hitch.txt', 'utf8', function (err, data) {
-        if (err)
-            throw err;
-        callback(null, data);
-    });
-}
-readContent(function (err, data) {
+var readFile = /** @class */ (function () {
+    function readFile(name) {
+        this.filename = name;
+    }
+    readFile.prototype.readContent = function (callback) {
+        fs.readFile(this.filename, 'utf8', function (err, data) {
+            if (err)
+                throw err;
+            callback(null, data);
+        });
+    };
+    return readFile;
+}());
+var obj = new readFile("hitch.txt");
+obj.readContent(function (err, data) {
     var reg = /\n| /; // Strip of all new lines and blanks
     var clean = data.split(reg);
     var count = {}; //create array count what includes all words and upcoming amount

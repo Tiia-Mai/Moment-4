@@ -1,19 +1,31 @@
 
 declare function require(name:string); // Make it possible to use require in TypeScript
-
 var fs = require('fs');
 
-function readContent(callback){
+
+class readFile {  // class readFile
+    filename: string;
+
+    constructor(name: string) {  
+        this.filename = name;
+    } 
+
+readContent(callback){
   
-     fs.readFile('hitch.txt', 'utf8', function(err, data) {  
+    fs.readFile(this.filename, 'utf8', function(err, data) {  
     if (err) throw err; 
     callback(null,data)
                  
 });
 }
 
+}
 
-readContent(function(err,data){
+
+let obj = new readFile("hitch.txt");
+
+
+obj.readContent(function(err,data){
     let reg:RegExp = /\n| /;  // Strip of all new lines and blanks
     const clean = data.split(reg); 
     
@@ -35,3 +47,8 @@ readContent(function(err,data){
 
     
 })
+
+
+
+
+
